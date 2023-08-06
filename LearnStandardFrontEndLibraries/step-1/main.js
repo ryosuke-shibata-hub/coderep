@@ -238,3 +238,146 @@ console.log(car7.shippedBy);
 car7.run7();
 
 // クラス
+class Car {
+    run() {
+        console.log("not implemented yet");
+    }
+}
+
+const car8 = new Car();
+car8.run();
+//コンストラクタ
+class Car2 {
+    constructor(fuel9, economyRate = 1) {
+        this.fuel9 = fuel9;
+        this.economyRate = economyRate;
+    }
+
+    run(distance) {
+        //コンストラクタでthisコンテキストに設定した値はthisで参照できるようになる
+        // this.fuel9 = this.fuel9 - distance;
+        this.fuel9 = this.fuel9 - distance * this.economyRate;
+        console.log(`走行距離${distance},現在の燃料は${this.fuel9}`);
+    }
+}
+//継承
+class Truck extends Car2 {
+    //継承して関数を上書きする
+    //サブクラスで親クラスの関数を同じ名前で定義すると親クラスの関数を上書きできる
+    // run(distance) {
+    //     this.fuel9 = this.fuel9 - distance * 2;
+    //     console.log(`走行距離${distance},現在の燃料は${this.fuel9}`);
+    // }
+    constructor(fuel9) {
+        const economyRate = 2;
+        super(fuel9, economyRate);
+    }
+}
+const car9 = new Car2(60);
+const truck = new Truck(100);
+
+car9.run(5);
+truck.run(10);
+
+//静的メソッド
+class Car3 {
+    static model() {
+        return "X-1976";
+    }
+}
+console.log(Car3.model());
+
+
+// //Promiseの基本的な使い方
+// const promise = new Promise((resolve, reject) => {
+//     //100mxあとに結果を返す
+//     setTimeout(() => {
+//         resolve("one");
+//     }, 100);
+// });
+
+// promise.then(data => {
+//     //resolveで渡された値が渡される
+//     console.log(data);
+// })
+
+
+// //promiseのチェイン（連結）
+// const breakfast = new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//         resolve("🥚");
+//     }, 100);
+// });
+
+// breakfast
+//     .then(data => {
+//         console.log(data);
+//         //then()の引数で渡された関数が値を消す場合、
+//         //自動的にpromise.resolveでラップされるので,then()をつなげることができる
+//         return `${data}🥓`;
+//     })
+//     .then(data => {
+//         console.log(data);
+//         return `${data}🥚`;
+//     })
+//     .then(data => {
+//         console.log(`${data}出来上がり`);
+//     })
+
+// //Promise.resolve(省略記法を使って成功時のpromiseを返す)
+// const promiseResolve = Promise.resolve("You got a API response!!");
+// promiseResolve
+//     .then(data => {
+//         console.log("成功しました。",data);
+//     })
+// //Promise.resolve(省略記法を使って失敗時のpromiseを返す)
+// const promiseReject = Promise.reject("java.lang.NullPointerException");
+// promiseReject
+//     .then(data => {
+//         console.log("成功しました。", data);
+//     })
+//     .catch(error => {
+//         console.log("失敗しました。", error);
+//     });
+
+
+//String.startsWith
+// 変数strが「はじめての」で始まることを検証してみましょう。
+const str = "はじめてのES6";
+console.log(str.startsWith("はじめての"));
+console.log(str.startsWith("ES6"));
+console.log(str.startsWith("ES6", 5));
+// 変数strが「ES6」で終わることを検証してみましょう。
+console.log(str.endsWith("ES6"));
+console.log(str.endsWith("ES"));
+console.log(str.endsWith("ES", 7));
+// 変数strが「ES6」を含むことを検証してみましょう。
+console.log(str.includes("ES6"));
+console.log(str.includes("coffeeScript"));
+console.log(str.includes("Rust"));
+
+
+//Array.From
+console.log(Array.from([1, 2, 3]));
+//文字列はcharの配列に変換される
+console.log(Array.from("array"));
+// カスタムもできる
+console.log(Array.from([1, 2, 3], (i) => {
+    return i * 2;
+}));
+
+//Array.find
+// 配列arrayの中で、最初に2で割り切れるもの を見つけてその要素を返してみましょう。
+
+const array5 = [1, 2, 3, 4, 5];
+//最初に2で割り切れるものを探す
+// const result = array.find((element, index) => {
+//     console.log(`index${index} => ${element}`);
+//     return element % 2 === 0;
+// });
+// ↓index番号を返せる
+const result = array.findIndex((element, index) => {
+    console.log(`index${index} => ${element}`);
+    return element % 2 === 0;
+});
+console.log(result);
