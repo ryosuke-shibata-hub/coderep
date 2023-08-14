@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="index.css">
+    <!-- js -->
+    <script src="index.js" defer></script>
+    <title>GoogleMap</title>
+</head>
+<body>
+    <div class="form row">
+        <div class="col-md-1 col-sm-2">
+            <select id="cities" class="form-control">
+                <option value="東京">東京</option>
+                <option value="大阪">大阪</option>
+                <option value="名古屋">名古屋</option>
+                <option value="札幌">札幌</option>
+                <option value="福岡">福岡</option>
+                <option value="高松">高松</option>
+                <option value="那覇">那覇</option>
+            </select>
+        </div>
+    </div>
+    <div class="map">
+        <div id="map">ここにMapを表示</div>
+    </div>
+    <div class="events">
+        <h3>メッセージ</h3>
+        <div id="message"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,11 @@
+label {
+    font-weight: bold;
+    display: inline-block;
+    width: 200px;
+    text-align: right;
+    margin-right: 20px;
+}
+
+label:after {
+    content: ": ";
+}

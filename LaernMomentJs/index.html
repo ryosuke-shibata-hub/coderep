@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
+    <!-- MomentJs -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/moment.min.js" integrity="sha512-ls52wG0HG5y4APAupGDjukiKRHQN6wyBhbVqRSwfrIbbM0lYVby+T5tOSVtG6xtR+SOYQcCacuU/moJAyAe7hQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.0/locale/ja.js" integrity="sha512-Rn3XpYTxojyRDNRCWAIEOeneHcJGgeClvy2409/GxGU45zqohJ70x1tU0Xp15jos00opXz/uk5LXY3uD0Yjpkg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- style -->
+    <link rel="stylesheet" href="index.css">
+    <!-- js -->
+    <script src="index.js" defer></script>
+    <title>MomentJs</title>
+    <script>
+        function display(label, value) {
+            var $p = $("<p/>");
+            var $label = $("<label/>").text(label);
+            var $value = $("<span/>").text(value);
+            $p.append($label).append($value);
+            $("#main").append($p);
+        }
+    </script>
+</head>
+<body>
+    <h1>Moment.jsを理解する</h1>
+    <div id="main"></div>
+</body>
+</html>
